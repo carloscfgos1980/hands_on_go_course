@@ -15,6 +15,7 @@ func main() {
 		"TrimSpace":    lessons.StringsTrimSpace,
 		"Substring":    lessons.Substring,
 		"ReplaceParts": lessons.ReplaceParts,
+		"Escaping":     lessons.EscapingCharacters,
 	}
 
 	if len(os.Args) < 2 {

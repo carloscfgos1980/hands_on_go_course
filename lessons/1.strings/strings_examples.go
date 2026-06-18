@@ -35,3 +35,12 @@ func ReplaceParts() {
 	newGreeting = strings.ReplaceAll(greeting, " ", "-")
 	fmt.Println(newGreeting)
 }
+
+func EscapingCharacters() {
+	helloWorld := "Hello World, this is Carlos \"The Great\""
+	fmt.Println(helloWorld)
+	helloWorld = "Hello World, this is Carlos \"The Great\" \t\n Hello Again"
+	fmt.Println(helloWorld)
+	helloWorld = "Hello World, this is Carlos \"The Great\" \\tHello Again"
+	fmt.Println(helloWorld)
+}
