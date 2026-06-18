@@ -2,12 +2,24 @@ package main
 
 import (
 	"fmt"
+	"os"
 	"strings"
+
+	lessons "hands_on_go/strings/lessons/1.strings"
 )
 
 func main() {
-	greetings := "\t Hello, World "
-	fmt.Printf("lent: %d\n greeting: %s", len(greetings), greetings)
-	trimmed := strings.TrimSpace(greetings)
-	fmt.Printf("lent: %d\n greeting: %s", len(trimmed), trimmed)
+	if len(os.Args) < 2 {
+		fmt.Println("usage: go run . [trim|substring]")
+		return
+	}
+
+	switch strings.ToLower(os.Args[1]) {
+	case "trim":
+		lessons.StringsTrimSpace()
+	case "substring":
+		lessons.Substring()
+	default:
+		fmt.Println("unknown command: use trim or substring")
+	}
 }
