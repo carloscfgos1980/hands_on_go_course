@@ -11,9 +11,10 @@ import (
 
 func main() {
 	commands := map[string]func(){
-		"Replace":   lessons.ReplaceString,
-		"TrimSpace": lessons.StringsTrimSpace,
-		"Substring": lessons.Substring,
+		"Replace":      lessons.ReplaceString,
+		"TrimSpace":    lessons.StringsTrimSpace,
+		"Substring":    lessons.Substring,
+		"ReplaceParts": lessons.ReplaceParts,
 	}
 
 	if len(os.Args) < 2 {

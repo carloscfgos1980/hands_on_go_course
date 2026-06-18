@@ -25,3 +25,13 @@ func ReplaceString() {
 	newGreeting := strings.Replace(greeting, "Mars", "Venus", 1)
 	fmt.Println(newGreeting)
 }
+
+func ReplaceParts() {
+	greeting := "Hello, World and Mars"
+	// Replace 2 spaces with hyphens
+	newGreeting := strings.Replace(greeting, " ", "-", 2)
+	fmt.Println(newGreeting)
+	// Replace all spaces with hyphens
+	newGreeting = strings.ReplaceAll(greeting, " ", "-")
+	fmt.Println(newGreeting)
+}
