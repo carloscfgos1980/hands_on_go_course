@@ -10,7 +10,11 @@ import (
 func main() {
 	commands := map[string]func(){
 		"BoolToString":  BoolToString,
-		"InstringToInt": InstringToInt,
+		"StringToInt":   StringToInt,
+		"StringToBool":  StringToBool,
+		"StringToFloat": StringToFloat,
+		"ByteToString":  ByteToString,
+		"StringToByte":  StringToByte,
 	}
 
 	if len(os.Args) < 2 {
