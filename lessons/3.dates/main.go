@@ -12,6 +12,7 @@ func main() {
 		"TimeNow": TimeNow,
 		"AddDate": AddDate,
 		"SubDate": SubtractDate,
+		"AddTime": AddTime,
 	}
 
 	if len(os.Args) < 2 {

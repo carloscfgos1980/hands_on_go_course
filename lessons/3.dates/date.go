@@ -45,3 +45,17 @@ func SubtractDate() {
 	lastYear := current.AddDate(-1, 0, 0)
 	fmt.Println("Last Year:", lastYear.Format("2006-01-02"))
 }
+
+func AddTime() {
+	// Get the current time
+	current := time.Now()
+	// Add 5 hours to the current time
+	nextFiveHours := current.Add(5 * time.Hour)
+	fmt.Println("Next Five Hours:", nextFiveHours.Format("2006-01-02 15:04:05"))
+	// Add 30 minutes to the current time
+	nextHalfHour := current.Add(30 * time.Minute)
+	fmt.Println("Next Half Hour:", nextHalfHour.Format("2006-01-02 15:04:05"))
+	// Add 45 seconds to the current time
+	next45Seconds := current.Add(45 * time.Second)
+	fmt.Println("Next 45 Seconds:", next45Seconds.Format("2006-01-02 15:04:05"))
+}
