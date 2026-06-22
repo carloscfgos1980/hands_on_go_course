@@ -11,6 +11,7 @@ func main() {
 	commands := map[string]func(){
 		"UniqueElements": UniqueElements,
 		"FindUnique":     FindUniqueElements,
+		"SortSlice":      SortSlice,
 	}
 
 	if len(os.Args) < 2 {
