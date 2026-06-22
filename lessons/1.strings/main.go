@@ -5,17 +5,16 @@ import (
 	"os"
 	"sort"
 	"strings"
-
-	lessons "hands_on_go/strings/lessons/1.strings"
 )
 
 func main() {
 	commands := map[string]func(){
-		"Replace":      lessons.ReplaceString,
-		"TrimSpace":    lessons.StringsTrimSpace,
-		"Substring":    lessons.Substring,
-		"ReplaceParts": lessons.ReplaceParts,
-		"Escaping":     lessons.EscapingCharacters,
+		"Replace":      ReplaceString,
+		"TrimSpace":    StringsTrimSpace,
+		"Substring":    Substring,
+		"ReplaceParts": ReplaceParts,
+		"Escaping":     EscapingCharacters,
+		"Capitalizing": Capitalizing,
 	}
 
 	if len(os.Args) < 2 {

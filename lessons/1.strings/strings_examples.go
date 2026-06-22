@@ -1,8 +1,11 @@
-package lessons
+package main
 
 import (
 	"fmt"
 	"strings"
+
+	"golang.org/x/text/cases"
+	"golang.org/x/text/language"
 )
 
 func StringsTrimSpace() {
@@ -43,4 +46,17 @@ func EscapingCharacters() {
 	fmt.Println(helloWorld)
 	helloWorld = "Hello World, this is Carlos \"The Great\" \\tHello Again"
 	fmt.Println(helloWorld)
+}
+
+func Capitalizing() {
+	greeting := "hello, world"
+	// Capitalize the first letter of the greeting
+	capitalized := strings.ToUpper(greeting[:1]) + greeting[1:]
+	fmt.Println(capitalized)
+	// Capitalize the first letter of each word in the greeting
+	title := cases.Title(language.English).String(greeting)
+	fmt.Println(title)
+	// Capitalize the entire greeting
+	upper := strings.ToUpper(greeting)
+	fmt.Println(upper)
 }
