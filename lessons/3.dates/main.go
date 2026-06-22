@@ -10,6 +10,8 @@ import (
 func main() {
 	commands := map[string]func(){
 		"TimeNow": TimeNow,
+		"AddDate": AddDate,
+		"SubDate": SubtractDate,
 	}
 
 	if len(os.Args) < 2 {
