@@ -10,6 +10,7 @@ import (
 func main() {
 	commands := map[string]func(){
 		"UniqueElements": UniqueElements,
+		"FindUnique":     FindUniqueElements,
 	}
 
 	if len(os.Args) < 2 {

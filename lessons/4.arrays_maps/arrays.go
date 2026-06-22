@@ -20,3 +20,12 @@ func unique(intSlice []int) []int {
 	}
 	return uniqueElements
 }
+
+func FindUniqueElements() {
+	str := []string{"Sandy", "Provo", "St. George", "Salt Lake City", "Draper", "South Jordan", "Murray"}
+	for i, v := range str {
+		if v == "Sandy" {
+			fmt.Println(i)
+		}
+	}
+}
