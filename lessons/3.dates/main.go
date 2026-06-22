@@ -9,10 +9,13 @@ import (
 
 func main() {
 	commands := map[string]func(){
-		"TimeNow": TimeNow,
-		"AddDate": AddDate,
-		"SubDate": SubtractDate,
-		"AddTime": AddTime,
+		"TimeNow":   TimeNow,
+		"AddDate":   AddDate,
+		"SubDate":   SubtractDate,
+		"AddTime":   AddTime,
+		"SubTime":   SubtractTime,
+		"TimeDiff":  TimeDifference,
+		"ParseDate": ParseDate,
 	}
 
 	if len(os.Args) < 2 {

@@ -59,3 +59,44 @@ func AddTime() {
 	next45Seconds := current.Add(45 * time.Second)
 	fmt.Println("Next 45 Seconds:", next45Seconds.Format("2006-01-02 15:04:05"))
 }
+
+func SubtractTime() {
+	// Get the current time
+	current := time.Now()
+	// Subtract 5 hours from the current time
+	lastFiveHours := current.Add(-5 * time.Hour)
+	fmt.Println("Last Five Hours:", lastFiveHours.Format("2006-01-02 15:04:05"))
+	// Subtract 30 minutes from the current time
+	lastHalfHour := current.Add(-30 * time.Minute)
+	fmt.Println("Last Half Hour:", lastHalfHour.Format("2006-01-02 15:04:05"))
+	// Subtract 45 seconds from the current time
+	last45Seconds := current.Add(-45 * time.Second)
+	fmt.Println("Last 45 Seconds:", last45Seconds.Format("2006-01-02 15:04:05"))
+}
+
+func TimeDifference() {
+	// Get the current time
+	current := time.Now()
+	// Create a future time 2 hours from now
+	future := current.Add(2 * time.Hour)
+	// Calculate the difference between the future time and the current time
+	diff := future.Sub(current)
+	fmt.Println("Time Difference:", diff)
+}
+
+func ParseDate() {
+	str := "2018-08-08T11:45:26.371Z"
+	layout := "2006-01-02T15:04:05.000Z"
+	noDateStrig := "lalalala"
+	t, err := time.Parse(layout, str)
+	if err != nil {
+		fmt.Println("Error parsing date:", err)
+		return
+	}
+	fmt.Println("Parsed Date:", t)
+	// Attempt to parse an invalid date string
+	_, err = time.Parse(layout, noDateStrig)
+	if err != nil {
+		fmt.Println("Error parsing invalid date string:", err)
+	}
+}
