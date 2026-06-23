@@ -95,4 +95,27 @@ func IterateArray() {
 	for i, v := range str {
 		fmt.Printf("Index: %d, Value: %s\n", i, v)
 	}
+	// Iterate through the slice in reverse order
+	str = []string{"Sandy", "Provo", "St. George", "Salt Lake City", "Draper", "South Jordan", "Murray"}
+	for i := len(str) - 1; i >= 0; i-- {
+		fmt.Println(str[i])
+	}
+}
+
+func MapToArray() {
+	type NameAge struct {
+		Name string
+		Age  int
+	}
+	var nameAgeSlice []NameAge
+	nameAges := map[string]int{
+		"Michael": 30,
+		"John":    25,
+		"Jessica": 26,
+		"Ali":     18,
+	}
+	for key, value := range nameAges {
+		nameAgeSlice = append(nameAgeSlice, NameAge{key, value})
+	}
+	fmt.Println(nameAgeSlice)
 }

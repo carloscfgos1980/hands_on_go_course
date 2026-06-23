@@ -14,6 +14,7 @@ func main() {
 		"SortSlice":      SortSlice,
 		"RevertArray":    RevertArray,
 		"IterateArray":   IterateArray,
+		"MapToArray":     MapToArray,
 	}
 
 	if len(os.Args) < 2 {
