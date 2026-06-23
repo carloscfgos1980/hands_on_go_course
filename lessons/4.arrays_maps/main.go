@@ -16,6 +16,7 @@ func main() {
 		"IterateArray":   IterateArray,
 		"MapToArray":     MapToArray,
 		"MergeArrays":    MergeArrays,
+		"MergeMaps":      MergeMaps,
 	}
 
 	if len(os.Args) < 2 {

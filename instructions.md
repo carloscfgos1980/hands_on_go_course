@@ -1,3 +1,37 @@
 # INTRUCTIONS
 
-1. strings
+## 1. strings
+- trim space
+- substrings
+- Replace string
+- Replace all
+- escaping special character
+- capitalizing
+
+## 2. data conversion
+- bool to string
+- string to int
+- string to bool
+- byte to string
+- string to byte
+
+## 3. dates
+- current time
+- add date
+- substrate date
+- add time
+- substrate time
+- time differance
+- parse date
+
+## 4. Arrays and Maps
+- unique elements
+- find element
+- sort slice
+- revert slice
+- iterate slice
+- map to array
+- merge arrays
+- merge maps
+
+
