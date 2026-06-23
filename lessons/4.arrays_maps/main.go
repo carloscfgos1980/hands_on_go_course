@@ -15,6 +15,7 @@ func main() {
 		"RevertArray":    RevertArray,
 		"IterateArray":   IterateArray,
 		"MapToArray":     MapToArray,
+		"MergeArrays":    MergeArrays,
 	}
 
 	if len(os.Args) < 2 {
