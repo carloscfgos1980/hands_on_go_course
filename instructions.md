@@ -33,5 +33,6 @@
 - map to array
 - merge arrays
 - merge maps
+- check value in map
 
 

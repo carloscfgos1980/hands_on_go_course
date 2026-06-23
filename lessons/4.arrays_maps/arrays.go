@@ -147,3 +147,23 @@ func MergeMaps() {
 	}
 	fmt.Println(map1)
 }
+
+func CheckValueInMap() {
+	map1 := map[string]int{
+		"Michael": 10,
+		"Jessica": 20,
+		"Tarik":   33,
+		"Jon":     22,
+	}
+	fmt.Println(map1)
+	if value, ok := map1["Michael"]; ok {
+		fmt.Println("Michael is in the map with value:", value)
+	} else {
+		fmt.Println("Michael is not in the map")
+	}
+	if value, ok := map1["Ali"]; ok {
+		fmt.Println("Ali is in the map with value:", value)
+	} else {
+		fmt.Println("Ali is not in the map")
+	}
+}

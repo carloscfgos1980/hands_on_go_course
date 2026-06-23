@@ -9,14 +9,15 @@ import (
 
 func main() {
 	commands := map[string]func(){
-		"UniqueElements": UniqueElements,
-		"FindUnique":     FindUniqueElements,
-		"SortSlice":      SortSlice,
-		"RevertArray":    RevertArray,
-		"IterateArray":   IterateArray,
-		"MapToArray":     MapToArray,
-		"MergeArrays":    MergeArrays,
-		"MergeMaps":      MergeMaps,
+		"UniqueElements":  UniqueElements,
+		"FindUnique":      FindUniqueElements,
+		"SortSlice":       SortSlice,
+		"RevertArray":     RevertArray,
+		"IterateArray":    IterateArray,
+		"MapToArray":      MapToArray,
+		"MergeArrays":     MergeArrays,
+		"MergeMaps":       MergeMaps,
+		"CheckValueInMap": CheckValueInMap,
 	}
 
 	if len(os.Args) < 2 {
