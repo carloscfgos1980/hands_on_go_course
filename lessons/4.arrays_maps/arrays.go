@@ -83,3 +83,16 @@ func RevertArray() {
 	sort.Sort(sort.Reverse(tobeSorted))
 	fmt.Println(tobeSorted)
 }
+
+func IterateArray() {
+	str := []string{"Sandy", "Provo", "St. George", "Salt Lake City", "Draper", "South Jordan", "Murray"}
+	fmt.Println(str)
+	// Iterate through the slice using a for loop
+	for i := 0; i < len(str); i++ {
+		fmt.Println(str[i])
+	}
+	// Iterate through the slice using a range loop
+	for i, v := range str {
+		fmt.Printf("Index: %d, Value: %s\n", i, v)
+	}
+}

@@ -13,6 +13,7 @@ func main() {
 		"FindUnique":     FindUniqueElements,
 		"SortSlice":      SortSlice,
 		"RevertArray":    RevertArray,
+		"IterateArray":   IterateArray,
 	}
 
 	if len(os.Args) < 2 {
