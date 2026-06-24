@@ -35,4 +35,11 @@
 - merge maps
 - check value in map
 
+## 5. Error
+- custom error
+- handle date error
+- go error package
+- loggin error
+- handle panic
+
 

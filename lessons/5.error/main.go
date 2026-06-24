@@ -9,7 +9,13 @@ import (
 
 func main() {
 	commands := map[string]func(){
-		"CustomError": CustomError,
+		"CustomError":     CustomError,
+		"HandleErrorDate": HandleErrorDate,
+		"GoErrorPackage":  GoErrorPackage,
+		"ErrorLogging":    ErrorLogging,
+		"ErrorPanic":      ErrorPanic,
+		"DeferPanic":      DeferPanic,
+		"RecoverPanic":    RecoverPanic,
 	}
 
 	if len(os.Args) < 2 {
