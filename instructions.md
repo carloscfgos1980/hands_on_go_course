@@ -42,4 +42,6 @@
 - loggin error
 - handle panic
 
-
+## 6. Files and Directories
+- check if file exists
+- read file

@@ -11,6 +11,7 @@ func main() {
 	commands := map[string]func(){
 		"CheckLogFile":    CheckLogFile,
 		"CheckLogNotFile": CheckLogNotFile,
+		"ReadFile":        ReadFile,
 	}
 
 	if len(os.Args) < 2 {

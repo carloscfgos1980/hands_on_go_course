@@ -26,3 +26,13 @@ func CheckLogNotFile() {
 		fmt.Println("Log1.txt file exists")
 	}
 }
+
+func ReadFile() {
+	contentBytes, err := os.ReadFile("names.txt")
+	if err != nil {
+		fmt.Println("Error reading file:", err)
+		return
+	}
+	var contentStr string = string(contentBytes)
+	fmt.Println(contentStr)
+}
