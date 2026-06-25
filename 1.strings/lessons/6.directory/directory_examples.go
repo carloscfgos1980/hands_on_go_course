@@ -140,15 +140,16 @@ func CopyFile() {
 	fmt.Println("File copied successfully")
 }
 
-func MoveFile() {
-	// Rename file
+func RenameFile() {
 	err := os.Rename("data/copy.txt", "data/moved.txt")
 	if err != nil {
 		fmt.Println("Error moving file:", err)
 		return
 	}
 	fmt.Println("File renamed successfully")
+}
 
+func MoveFile() {
 	// create "target" directory if it doesn't exist
 	if _, err := os.Stat("target"); os.IsNotExist(err) {
 		err := os.Mkdir("target", 0755)
@@ -180,4 +181,16 @@ func MoveFile() {
 	}
 	fmt.Println("File moved to target directory successfully")
 
+}
+
+func ListFilesInDirectory() {
+	files, err := os.ReadDir("data")
+	if err != nil {
+		fmt.Println("Error reading directory:", err)
+		return
+	}
+
+	for _, file := range files {
+		fmt.Println(file.Name())
+	}
 }

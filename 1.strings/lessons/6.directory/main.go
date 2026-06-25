@@ -20,7 +20,9 @@ func main() {
 		"CompareFiles":    func(_ []string) { fmt.Println(CompareFiles()) },
 		"DeleteFile":      RunDeleteFile,
 		"CopyFile":        func(_ []string) { CopyFile() },
+		"RenameFile":      func(_ []string) { RenameFile() },
 		"MoveFile":        func(_ []string) { MoveFile() },
+		"ReadFiles":       func(_ []string) { ListFilesInDirectory() },
 	}
 
 	if len(os.Args) < 2 {
