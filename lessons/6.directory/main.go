@@ -13,6 +13,8 @@ func main() {
 		"CheckLogNotFile": CheckLogNotFile,
 		"ReadFile":        ReadFile,
 		"WriteFile":       WriteFile,
+		"WriteTempFile":   WriteTemporaryFile,
+		"FileCountLines":  CountLinesInFile,
 	}
 
 	if len(os.Args) < 2 {

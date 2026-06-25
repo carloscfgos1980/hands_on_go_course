@@ -1,6 +1,7 @@
 package main
 
 import (
+	"bufio"
 	"fmt"
 	"os"
 )
@@ -45,4 +46,35 @@ func WriteFile() {
 		return
 	}
 	fmt.Println("File written successfully")
+}
+
+func WriteTemporaryFile() {
+	tempFile, err := os.CreateTemp("", "tempfile_*.txt")
+	if err != nil {
+		fmt.Println("Error creating temporary file:", err)
+		return
+	}
+	defer os.Remove(tempFile.Name()) // Clean up the temporary file after use
+
+	content := "This is a temporary file.\n"
+	if _, err := tempFile.Write([]byte(content)); err != nil {
+		fmt.Println("Error writing to temporary file:", err)
+		return
+	}
+
+	fmt.Println("Temporary file created:", tempFile.Name())
+}
+
+func CountLinesInFile() {
+	file, _ := os.Open("names.txt")
+	fileScanner := bufio.NewScanner(file)
+	lineCount := 0
+	for fileScanner.Scan() {
+		lineCount++
+	}
+	if err := fileScanner.Err(); err != nil {
+		fmt.Println("Error reading file:", err)
+	}
+	defer file.Close()
+	fmt.Println(lineCount)
 }

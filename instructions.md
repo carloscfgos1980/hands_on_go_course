@@ -46,3 +46,5 @@
 - check if file exists
 - read file
 - write file
+- write temporary files
+- count lines
