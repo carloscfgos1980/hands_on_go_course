@@ -36,3 +36,13 @@ func ReadFile() {
 	var contentStr string = string(contentBytes)
 	fmt.Println(contentStr)
 }
+
+func WriteFile() {
+	content := "Hello, World!\nThis is a test file.\n"
+	err := os.WriteFile("hello_world.txt", []byte(content), 0644)
+	if err != nil {
+		fmt.Println("Error writing file:", err)
+		return
+	}
+	fmt.Println("File written successfully")
+}

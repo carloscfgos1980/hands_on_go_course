@@ -12,6 +12,7 @@ func main() {
 		"CheckLogFile":    CheckLogFile,
 		"CheckLogNotFile": CheckLogNotFile,
 		"ReadFile":        ReadFile,
+		"WriteFile":       WriteFile,
 	}
 
 	if len(os.Args) < 2 {
