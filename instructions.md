@@ -48,3 +48,4 @@
 - write file
 - write temporary files
 - count lines
+- compare files

@@ -17,6 +17,7 @@ func main() {
 		"WriteTempFile":   func(_ []string) { WriteTemporaryFile() },
 		"FileCountLines":  func(_ []string) { CountLinesInFile() },
 		"ReadLine":        RunReadLine,
+		"CompareFiles":    func(_ []string) { fmt.Println(CompareFiles()) },
 	}
 
 	if len(os.Args) < 2 {

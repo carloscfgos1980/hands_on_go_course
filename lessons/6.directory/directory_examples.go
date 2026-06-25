@@ -95,3 +95,19 @@ func ReadLine(lineNumber int) string {
 	defer file.Close()
 	return ""
 }
+
+func CompareFiles() bool {
+	file1Content, err1 := os.ReadFile("data/one.txt")
+	if err1 != nil {
+		fmt.Println("Error reading file:", err1)
+		return false
+	}
+
+	file2Content, err2 := os.ReadFile("data/two.txt")
+	if err2 != nil {
+		fmt.Println("Error reading file:", err2)
+		return false
+	}
+
+	return string(file1Content) == string(file2Content)
+}
