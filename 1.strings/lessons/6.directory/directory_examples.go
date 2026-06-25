@@ -3,6 +3,7 @@ package main
 import (
 	"bufio"
 	"fmt"
+	"io"
 	"os"
 )
 
@@ -119,4 +120,22 @@ func DeleteFile(filePath string) {
 		return
 	}
 	fmt.Println("File deleted successfully")
+}
+
+func CopyFile() {
+	original, err := os.Open("data/original.txt")
+	if err != nil {
+		panic(err)
+	}
+	defer original.Close()
+	original_copy, err2 := os.Create("data/copy.txt")
+	if err2 != nil {
+		panic(err2)
+	}
+	defer original_copy.Close()
+	_, err3 := io.Copy(original_copy, original)
+	if err3 != nil {
+		panic(err3)
+	}
+	fmt.Println("File copied successfully")
 }

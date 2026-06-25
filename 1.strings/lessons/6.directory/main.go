@@ -19,6 +19,7 @@ func main() {
 		"ReadLine":        RunReadLine,
 		"CompareFiles":    func(_ []string) { fmt.Println(CompareFiles()) },
 		"DeleteFile":      RunDeleteFile,
+		"CopyFile":        func(_ []string) { CopyFile() },
 	}
 
 	if len(os.Args) < 2 {
