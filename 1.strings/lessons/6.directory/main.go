@@ -18,6 +18,7 @@ func main() {
 		"FileCountLines":  func(_ []string) { CountLinesInFile() },
 		"ReadLine":        RunReadLine,
 		"CompareFiles":    func(_ []string) { fmt.Println(CompareFiles()) },
+		"DeleteFile":      RunDeleteFile,
 	}
 
 	if len(os.Args) < 2 {
@@ -47,6 +48,13 @@ func RunReadLine(args []string) {
 	}
 
 	fmt.Println(ReadLine(lineNumber))
+}
+func RunDeleteFile(args []string) {
+	if len(args) < 1 {
+		fmt.Println("usage: go run . DeleteFile <file-path>")
+		return
+	}
+	DeleteFile(args[0])
 }
 
 func commandNames(commands map[string]func([]string)) []string {

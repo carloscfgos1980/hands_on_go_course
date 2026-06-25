@@ -49,3 +49,4 @@
 - write temporary files
 - count lines
 - compare files
+- delete file

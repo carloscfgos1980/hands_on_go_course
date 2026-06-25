@@ -29,7 +29,7 @@ func CheckLogNotFile() {
 }
 
 func ReadFile() {
-	contentBytes, err := os.ReadFile("names.txt")
+	contentBytes, err := os.ReadFile("/data/names.txt")
 	if err != nil {
 		fmt.Println("Error reading file:", err)
 		return
@@ -40,7 +40,7 @@ func ReadFile() {
 
 func WriteFile() {
 	content := "Hello, World!\nThis is a test file.\n"
-	err := os.WriteFile("hello_world.txt", []byte(content), 0644)
+	err := os.WriteFile("/data/hello_world.txt", []byte(content), 0644)
 	if err != nil {
 		fmt.Println("Error writing file:", err)
 		return
@@ -66,7 +66,7 @@ func WriteTemporaryFile() {
 }
 
 func CountLinesInFile() {
-	file, _ := os.Open("names.txt")
+	file, _ := os.Open("/data/names.txt")
 	fileScanner := bufio.NewScanner(file)
 	lineCount := 0
 	for fileScanner.Scan() {
@@ -80,7 +80,7 @@ func CountLinesInFile() {
 }
 
 func ReadLine(lineNumber int) string {
-	file, _ := os.Open("names.txt")
+	file, _ := os.Open("/data/names.txt")
 	fileScanner := bufio.NewScanner(file)
 	lineCount := 0
 	for fileScanner.Scan() {
@@ -97,17 +97,26 @@ func ReadLine(lineNumber int) string {
 }
 
 func CompareFiles() bool {
-	file1Content, err1 := os.ReadFile("data/one.txt")
+	file1Content, err1 := os.ReadFile("/data/one.txt")
 	if err1 != nil {
 		fmt.Println("Error reading file:", err1)
 		return false
 	}
 
-	file2Content, err2 := os.ReadFile("data/two.txt")
+	file2Content, err2 := os.ReadFile("/data/two.txt")
 	if err2 != nil {
 		fmt.Println("Error reading file:", err2)
 		return false
 	}
 
 	return string(file1Content) == string(file2Content)
+}
+
+func DeleteFile(filePath string) {
+	err := os.Remove(filePath)
+	if err != nil {
+		fmt.Println("Error deleting file:", err)
+		return
+	}
+	fmt.Println("File deleted successfully")
 }
