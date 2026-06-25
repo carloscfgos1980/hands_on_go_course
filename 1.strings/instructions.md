@@ -50,3 +50,4 @@
 - count lines
 - compare files
 - delete file
+- move files

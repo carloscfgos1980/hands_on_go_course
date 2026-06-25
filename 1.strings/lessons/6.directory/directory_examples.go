@@ -139,3 +139,45 @@ func CopyFile() {
 	}
 	fmt.Println("File copied successfully")
 }
+
+func MoveFile() {
+	// Rename file
+	err := os.Rename("data/copy.txt", "data/moved.txt")
+	if err != nil {
+		fmt.Println("Error moving file:", err)
+		return
+	}
+	fmt.Println("File renamed successfully")
+
+	// create "target" directory if it doesn't exist
+	if _, err := os.Stat("target"); os.IsNotExist(err) {
+		err := os.Mkdir("target", 0755)
+		if err != nil {
+			fmt.Println("Error creating target directory:", err)
+			return
+		}
+	}
+	// move the file to the "target" directory
+	original, err := os.Open("data/moved.txt")
+	if err != nil {
+		panic(err)
+	}
+	defer original.Close()
+	target, err := os.Create("target/moved.txt")
+	if err != nil {
+		panic(err)
+	}
+	defer target.Close()
+	_, err = io.Copy(target, original)
+	if err != nil {
+		panic(err)
+	}
+	// delete the original file after moving
+	err = os.Remove("data/moved.txt")
+	if err != nil {
+		fmt.Println("Error deleting original file:", err)
+		return
+	}
+	fmt.Println("File moved to target directory successfully")
+
+}
