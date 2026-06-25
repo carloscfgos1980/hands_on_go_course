@@ -78,3 +78,20 @@ func CountLinesInFile() {
 	defer file.Close()
 	fmt.Println(lineCount)
 }
+
+func ReadLine(lineNumber int) string {
+	file, _ := os.Open("names.txt")
+	fileScanner := bufio.NewScanner(file)
+	lineCount := 0
+	for fileScanner.Scan() {
+		if lineCount == lineNumber {
+			return fileScanner.Text()
+		}
+		lineCount++
+	}
+	if err := fileScanner.Err(); err != nil {
+		fmt.Println("Error reading file:", err)
+	}
+	defer file.Close()
+	return ""
+}

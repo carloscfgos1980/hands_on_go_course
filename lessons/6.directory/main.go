@@ -4,17 +4,19 @@ import (
 	"fmt"
 	"os"
 	"sort"
+	"strconv"
 	"strings"
 )
 
 func main() {
-	commands := map[string]func(){
-		"CheckLogFile":    CheckLogFile,
-		"CheckLogNotFile": CheckLogNotFile,
-		"ReadFile":        ReadFile,
-		"WriteFile":       WriteFile,
-		"WriteTempFile":   WriteTemporaryFile,
-		"FileCountLines":  CountLinesInFile,
+	commands := map[string]func([]string){
+		"CheckLogFile":    func(_ []string) { CheckLogFile() },
+		"CheckLogNotFile": func(_ []string) { CheckLogNotFile() },
+		"ReadFile":        func(_ []string) { ReadFile() },
+		"WriteFile":       func(_ []string) { WriteFile() },
+		"WriteTempFile":   func(_ []string) { WriteTemporaryFile() },
+		"FileCountLines":  func(_ []string) { CountLinesInFile() },
+		"ReadLine":        RunReadLine,
 	}
 
 	if len(os.Args) < 2 {
@@ -28,10 +30,25 @@ func main() {
 		return
 	}
 
-	run()
+	run(os.Args[2:])
 }
 
-func commandNames(commands map[string]func()) []string {
+func RunReadLine(args []string) {
+	if len(args) < 1 {
+		fmt.Println("usage: go run . ReadLine <line-number>")
+		return
+	}
+
+	lineNumber, err := strconv.Atoi(args[0])
+	if err != nil || lineNumber < 0 {
+		fmt.Println("line-number must be a non-negative integer")
+		return
+	}
+
+	fmt.Println(ReadLine(lineNumber))
+}
+
+func commandNames(commands map[string]func([]string)) []string {
 	names := make([]string, 0, len(commands))
 	for name := range commands {
 		names = append(names, name)
