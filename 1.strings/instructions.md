@@ -52,5 +52,12 @@
 - delete file
 - move files
 
-## 7. concurrency
-- 
+## 7. Concurrency
+- print names concurrency
+- print names concurrency channel
+- passing data to channels
+- sync group
+- catch result concurency
+
+## 8. System Programming
+- catching signals
