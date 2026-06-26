@@ -10,6 +10,7 @@ import (
 func main() {
 	commands := map[string]func(){
 		"CatchingSignals": CatchingSignals,
+		"ChildProcess":    ChildProcess,
 	}
 
 	if len(os.Args) < 2 {

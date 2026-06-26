@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"os"
+	"os/exec"
 	"os/signal"
 	"syscall"
 )
@@ -20,4 +21,12 @@ func CatchingSignals() {
 	fmt.Println("Waiting for signal")
 	<-done
 	fmt.Println("Exiting the application...")
+}
+
+func ChildProcess() {
+	lsCommand := exec.Command("ls")
+	output, _ := lsCommand.Output()
+	lsCommand.Run()
+	fmt.Println(lsCommand.Process.Pid)
+	fmt.Println(string(output))
 }
