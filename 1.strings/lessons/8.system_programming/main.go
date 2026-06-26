@@ -8,9 +8,10 @@ import (
 )
 
 func main() {
-	commands := map[string]func(){
-		"CatchingSignals": CatchingSignals,
-		"ChildProcess":    ChildProcess,
+	commands := map[string]func([]string){
+		"CatchingSignals": func(_ []string) { CatchingSignals() },
+		"ChildProcess":    func(_ []string) { ChildProcess() },
+		"PassArguments":   RunPassArguments,
 	}
 
 	if len(os.Args) < 2 {
@@ -24,10 +25,19 @@ func main() {
 		return
 	}
 
-	run()
+	run(os.Args[2:])
 }
 
-func commandNames(commands map[string]func()) []string {
+func RunPassArguments(args []string) {
+	if len(args) < 1 {
+		fmt.Println("usage: go run . PassArguments <argument>")
+		return
+	}
+
+	PassArguments(args)
+}
+
+func commandNames(commands map[string]func([]string)) []string {
 	names := make([]string, 0, len(commands))
 	for name := range commands {
 		names = append(names, name)

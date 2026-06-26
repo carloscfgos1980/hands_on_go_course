@@ -30,3 +30,25 @@ func ChildProcess() {
 	fmt.Println(lsCommand.Process.Pid)
 	fmt.Println(string(output))
 }
+
+func PassArguments(args []string) {
+	realArgs := args
+	if len(realArgs) == 0 {
+		fmt.Println("Please pass an argument.")
+		return
+	}
+	switch realArgs[0] {
+	case "a":
+		writeHelloWorld()
+	case "b":
+		writeHelloMars()
+	default:
+		fmt.Println("Please pass a valid argument.")
+	}
+}
+func writeHelloWorld() {
+	fmt.Println("Hello, World")
+}
+func writeHelloMars() {
+	fmt.Println("Hello, Mars")
+}
